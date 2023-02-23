@@ -19,8 +19,21 @@ def delete_league():
         print("there is no league named", inputted_league_abbreviation)
 
 
+def add_league():
+    global sports_leagues
+    print("please enter the three-letter abbreviation followed by the full string description of the new league")
+    inputted_new_abbreviation = str(input("enter the abbreviation here")).upper()
+    if inputted_new_abbreviation not in sports_leagues:
+        inputted_new_league_desc = str(input("enter the full string description here")).title()
+        sports_leagues[inputted_new_abbreviation] = inputted_new_league_desc
+        print(inputted_new_league_desc, "has successfully been added")
+    else:
+        print(inputted_new_abbreviation, "is already in listed")
+
+
 def main():
     delete_league()
+    add_league()
 
 
 if __name__ == '__main__':
