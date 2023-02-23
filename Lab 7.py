@@ -31,9 +31,26 @@ def add_league():
         print(inputted_new_abbreviation, "is already in listed")
 
 
+def get_abbreviations():
+    return list(sports_leagues.keys())
+
+
+def get_league_descriptions_tuple():
+    return tuple(sports_leagues.values())
+
+
+def get_league_descriptions_set():
+    league_descriptions_set = {keys for keys in sports_leagues}
+    league_descriptions_set.update(sports_leagues.values())
+    return league_descriptions_set
+
+
 def main():
     delete_league()
     add_league()
+    print(get_abbreviations())
+    print(get_league_descriptions_tuple())
+    print(get_league_descriptions_set())
 
 
 if __name__ == '__main__':
